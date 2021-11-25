@@ -13,17 +13,21 @@ class LoginScreen extends GetView<LoginController> {
         child: Form(
           key: controller.loginFormKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Login Here'),
-              TextFormField(
-                //key: controller.loginFormKey,
-                controller: controller.phoneController,
-                onSaved: (value) {
-                  controller.phoneno = value!;
-                },
-                validator: (value) {
-                  return controller.validatePhNumber(value!);
-                },
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
+                  //key: controller.loginFormKey,
+                  controller: controller.phoneController,
+                  onSaved: (value) {
+                    controller.phoneno = value!;
+                  },
+                  validator: (value) {
+                    return controller.validatePhNumber(value!);
+                  },
+                ),
               ),
               ElevatedButton(
                 onPressed: () {

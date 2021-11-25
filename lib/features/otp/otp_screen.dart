@@ -13,9 +13,13 @@ class _OtpScreenState extends State<OtpScreen> {
     return Scaffold(
       body: SafeArea(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text('Otp Screen'),
-          TextFormField(),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: TextFormField(),
+          ),
           ElevatedButton(onPressed: () {}, child: const Text('Continue'))
         ],
       )),
